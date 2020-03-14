@@ -1,0 +1,28 @@
+Testing
+
+From: nobody <nobody@nowhere>
+
+
+---
+ src/InfUdDriver.cc |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/InfUdDriver.cc b/src/InfUdDriver.cc
+index b03c60a3..11400bf4 100644
+--- a/src/InfUdDriver.cc
++++ b/src/InfUdDriver.cc
+@@ -468,10 +468,10 @@ InfUdDriver::sendPacket(const Driver::Address* addr,
+     // In raw ethernet mode, loopback packets must be handled specially on
+     // CloudLab xl170 machines.
+     const MacAddress* destMac = static_cast<const MacAddress*>(addr);
+-    if (unlikely(localMac && destMac->equal(*localMac.get()))) {
+-        sendLoopbackPacket(header, headerLen, payload, payloadSize);
+-        return;
+-    }
++    // if (unlikely(localMac && destMac->equal(*localMac.get()))) {
++    //     sendLoopbackPacket(header, headerLen, payload, payloadSize);
++    //     return;
++    // }
+ 
+     // Grab a free packet buffer.
+     BufferDescriptor* bd = getTransmitBuffer();
